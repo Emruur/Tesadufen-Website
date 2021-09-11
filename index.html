@@ -11,6 +11,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
         <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
         <style>
+            html,
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
             .card:hover .card-footer {
                 background-color: rgb(180, 152, 152);
             }
@@ -156,7 +161,7 @@
                     <div class="col-md-8 col-lg-6">
                         <ul class="list rounded-3 mt-0">
                             <li class="item">
-                                <img src="./assets/yoruldum.jpg" class="img-fluid resize" alt="" />
+                                <img src="./assets/yoruldum.jpg" class="img-fluid" alt="" />
 
                                 <h3 class="pt-3">Yoruldum <span class="h5 text-muted">- Single</span></h3>
                                 <h4 class="text-muted">Tesadüfen</h4>
@@ -182,7 +187,7 @@
                                 <a href="">Dinle/İndir</a>
                             </li>
                         </ul>
-                        <div class="buttonGroup d-flex justify-content-center mb-4">
+                        <div class="buttonGroupYeah d-flex justify-content-center mb-4">
                             <button class="prev me-5">←</button>
                             <button class="next ms-5">→</button>
                         </div>
