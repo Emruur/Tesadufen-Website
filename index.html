@@ -9,10 +9,9 @@
         <link rel="stylesheet" href="scroll.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
         <style>
-            body {
-                overflow-x: hidden;
-            }
+            
             .card:hover .card-footer {
                 background-color: rgb(180, 152, 152);
             }
@@ -41,6 +40,9 @@
 
             .nav-logo:hover {
                 transform: scale(1.05);
+            }
+            .photologo {
+                width: 35px;
             }
 
             .lft:hover {
@@ -150,20 +152,69 @@
             </div>
         </section>
         <section id="songs" class="">
-            <div class="container ">
+            <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6">
-                        <ul class="list rounded-3">
-                            <li class="item">
-                                <img src="./assets/yoruldum.jpg" class="img-fluid d-block" alt="" />
-                                
-                                
-                            </li>
-                            <li class="item"><img src="./assets/yokus.jpg" class="img-fluid" alt="" /></li>
-                            <li class="item"><img src="./assets/boyleguzel.jpg" class="img-fluid" alt="" /></li>
-                            <li class="item"><img src="./assets/ilkakustikler.jpg" class="img-fluid" alt="" /></li>
-                            
-                        </ul>
+                        <div class="">
+                            <div class="d-flex justify-content-center">
+                                <a
+                                    href=""
+                                    class="
+                                        d-none
+                                        border-5 border-primary
+                                        bg-dark
+                                        text-white text-decoration-none
+                                        pb-0
+                                        mb-0
+                                        pt-2
+                                        ps-2
+                                        pe-2
+                                        pb-2
+                                        rounded-top
+                                        display-5
+                                    "
+                                    ><img class="photologo" src="./assets/spotify.png" alt="" />
+                                    <img class="photologo" src="./assets/applemusic.png" alt="" />
+                                </a>
+                            </div>
+
+                            <ul class="list rounded-3 mt-0">
+                                <li class="item">
+                                    <img src="./assets/yoruldum.jpg" class="img-fluid" alt="" />
+                                    <h3 class="pt-3">Yoruldum <span class="h5 text-muted">- Single</span></h3>
+                                    <h4 class="text-muted">Tesadüfen</h4>
+                                    <a href="">Dinle/İndir</a>
+                                </li>
+                                <li class="item">
+                                    <img src="./assets/yokus.jpg" class="img-fluid" alt="" />
+                                    <h3 class="pt-3">Yokuş <span class="h5 text-muted">- Single</span></h3>
+                                    <h4 class="text-muted">Tesadüfen</h4>
+                                    <a href="">Dinle/İndir</a>
+                                </li>
+                                <li class="item">
+                                    <img src="./assets/boyleguzel.jpg" class="img-fluid" alt="" />
+                                    <h3 class="pt-3">Böyle Güzel <span class="h5 text-muted">- Single</span></h3>
+                                    <h4 class="text-muted">Tesadüfen & Eray</h4>
+                                    <a href="">Dinle/İndir</a>
+                                </li>
+                                <li class="item">
+                                    <img src="./assets/ilkakustikler.jpg" class="img-fluid" alt="" />
+                                    <h3 class="pt-3">İlk Akustikler <span class="text-muted h5">- 2 Şarkı</span></h3>
+                                    <h4 class="text-muted">Tesadüfen</h4>
+                                    <a href="">Dinle/İndir</a>
+                                </li>
+                            </ul>
+                            <div class="buttonGroup d-flex justify-content-center mb-4">
+                                <button class="prev me-5">←</button>
+                                <button class="next ms-5">→</button>
+                            </div>
+                            <ul class="indicatorsList" aria-hidden>
+                                <li class="indicator"></li>
+                                <li class="indicator"></li>
+                                <li class="indicator"></li>
+                                <li class="indicator"></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -216,7 +267,7 @@
         <section id="hakkımızda" class="mt-5 pt-5 mb-5 pb-5 bg-black">
             <div class="container-lg">
                 <div class="row align-items-center g-5">
-                    <div class="col-md-6">
+                    <div class="col-md-6 text-center text-md-start">
                         <h2 class="mb-4">Biz Kimiz?</h2>
                         <p>
                             Grubun kuruluş tarihi Ocak 2017 olmasına rağmen Ocak 2019'da grubun son halini alan ve
@@ -311,6 +362,7 @@
             integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
             crossorigin="anonymous"
         ></script>
+
         <script>
             function yokuş() {
                 window.location.assign("https://distrokid.com/hyperfollow/tesadfen/yoku");
@@ -330,6 +382,58 @@
         <script>
             const tooltips = document.querySelectorAll(".tt");
             tooltips.forEach((t) => new bootstrap.Tooltip(t));
+        </script>
+        <script>
+            const list = document.querySelector(".list");
+            const items = Array.from(document.querySelectorAll(".item"));
+            const indicators = Array.from(document.querySelectorAll(".indicator"));
+            const prev = document.querySelector(".prev");
+            const next = document.querySelector(".next");
+            const state = { active: 0 };
+
+            const observer = new IntersectionObserver(onIntersectionObserved, {
+                root: list,
+                threshold: 0.6,
+            });
+
+            function onIntersectionObserved(entries) {
+                entries.forEach((entry) => {
+                    // On page load, firefox claims item with index 1 isIntersecting,
+                    // while intersectionRatio is 0
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+                        const intersectingIndex = items.indexOf(entry.target);
+                        activateIndicator(intersectingIndex);
+                    }
+                });
+            }
+
+            function activateIndicator(index) {
+                state.active= index;
+                indicators.forEach((indicator, i) => {
+                    indicator.classList.toggle("active", i === index);
+                });
+            }
+
+            items.forEach((item) => {
+                observer.observe(item);
+            });
+            indicators.forEach((x, i) =>
+                x.addEventListener("click", () => items[i].scrollIntoView({ inline: "start", behavior: "smooth" }))
+            );
+
+            prev.addEventListener("click", () => {
+                items[state.active - 1]?.scrollIntoView({
+                    inline: "start",
+                    behavior: "smooth",
+                });
+            });
+
+            next.addEventListener("click", () => {
+                items[state.active + 1]?.scrollIntoView({
+                    inline: "start",
+                    behavior: "smooth",
+                });
+            });
         </script>
     </body>
 </html>
