@@ -6,9 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tesadufen Official</title>
         <link rel="stylesheet" href="bootstrap.min.css" />
-        <link rel="stylesheet" href="scroll.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+            rel="stylesheet"
+        />
 
         <style>
             html,
@@ -16,12 +22,19 @@
                 max-width: 100%;
                 overflow-x: hidden;
             }
+            .card {
+                transition-property: all;
+            }
             .card:hover .card-footer {
                 background-color: rgb(180, 152, 152);
+                transition-duration: 250ms;
+                transition-timing-function: ease-in-out;
             }
 
             .card:hover {
-                transform: scale(1.05);
+                transition-duration: 250ms;
+                transition-timing-function: ease-in-out;
+                transform: scale(1.1);
                 box-shadow: 0 10px 20px rgba(97, 91, 184, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
                 z-index: 1;
             }
@@ -53,21 +66,21 @@
                 transform: scale(1.05);
             }
 
-            .object-fit-cover {
-                object-fit: contain;
-            }
+            
         </style>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-black">
             <div class="container-fluid">
                 <a href="#intro" class="navbar-brand pe-0 me-0">
-                    <span class="fw-bold ps-4"> <img src="./assets/logo.jpg" class="w-50" alt="" /> </span>
+                    <span class="fw-bold ps-4">
+                        <img src="./assets/logo.jpg" class="w-50" alt="" />
+                    </span>
                 </a>
 
                 <!--Navbar Toggler-->
                 <button
-                    class="navbar-toggler"
+                    class="navbar-toggler nav-inactive"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#main-nav"
@@ -79,73 +92,131 @@
                 </button>
 
                 <!--Navbar linls-->
-                <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                <div
+                    class="collapse navbar-collapse justify-content-end align-center"
+                    id="main-nav"
+                >
                     <ul class="navbar-nav">
-                        <li class="nav-item d-flex">
-                            <a
-                                href="https://open.spotify.com/artist/5kVYZroxmgkJvaGoFzpGMx?si=cBEVfIkRQ_eLK_HJ0sVZuA&dl_branch=1"
-                                class="nav-link pe-3"
-                                ><img class="nav-logo" src="./assets/spotify.png" alt="" /></a
-                            ><a href="https://www.instagram.com/tesadufenofficial/?hl=tr" class="nav-link pe-3"
-                                ><img class="nav-logo" src="./assets/instagram.png" alt="" /></a
-                            ><a href="https://www.youtube.com/watch?v=ltCopbqfNYI" class="nav-link pe-3"
-                                ><img class="nav-logo" src="./assets/youtube.png" alt=""
-                            /></a>
-                        </li>
-
                         <li class="nav-item">
                             <a href="#hakkımızda" class="nav-link">Biz Kimiz?</a>
                         </li>
                         <li class="nav-item">
                             <a href="#etkinlikler" class="nav-link">Etkinlikler</a>
                         </li>
-                        <li class="nav-item d-md-none">
-                            <a href="#songs" class="nav-link">Şarkılar</a>
-                        </li>
+
                         <li class="nav-item">
                             <a href="#contact" class="nav-link">Bize Ulaşın</a>
                         </li>
-                        <li class="nav-item ms-2 d-none d-md-inline">
-                            <a href="#songs" class="btn btn-secondary">Şarkılar</a>
+                        <li class="nav-item ms-2">
+                            <a href="#songs" class="nav-link">Şarkılar</a>
                         </li>
+                        <div class="dropdown">
+                            <button
+                                class="btn btn-secondary dropdown-toggle"
+                                type="button"
+                                id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                Sosyal Medya
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="https://www.instagram.com/tesadufenofficial/?hl=tr"
+                                        >Instagram</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="https://www.youtube.com/watch?v=ltCopbqfNYI"
+                                        >YouTube
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="https://open.spotify.com/artist/5kVYZroxmgkJvaGoFzpGMx?si=cBEVfIkRQ_eLK_HJ0sVZuA&dl_branch=1"
+                                        >Spotify</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
                     </ul>
                 </div>
             </div>
         </nav>
-        <section id="intro" class="mt-0 mt-md-5 pt-2 pt-md-5 pb-5 mb-5">
+        <section id="intro" class="my-2 my-md-4 py-2 py-md-5">
             <div class="container-fluid">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-6 col-md-2 p-0">
-                        <a class="card text-decoration-none" href="https://www.instagram.com/bariss_barann/">
-                            <img class="card-img-top img-fluid" src="./assets/barıs.jpg" alt="Card image cap" />
+                        <a
+                            class="card text-decoration-none"
+                            href="https://www.instagram.com/bariss_barann/"
+                        >
+                            <img
+                                class="card-img-top img-fluid"
+                                src="./assets/barıs.jpg"
+                                alt="Card image cap"
+                            />
 
                             <div class="card-footer text-white text-center">@barıs</div>
                         </a>
                     </div>
                     <div class="col-6 col-md-2 p-0">
-                        <a class="card text-decoration-none" href="https://www.instagram.com/sahin.dorukk/">
-                            <img class="card-img-top img-fluid" src="./assets/doruk.jpg" alt="Card image cap" />
+                        <a
+                            class="card text-decoration-none"
+                            href="https://www.instagram.com/sahin.dorukk/"
+                        >
+                            <img
+                                class="card-img-top img-fluid"
+                                src="./assets/doruk.jpg"
+                                alt="Card image cap"
+                            />
 
                             <div class="card-footer text-white text-center">@doruk</div>
                         </a>
                     </div>
                     <div class="col-6 col-md-2 p-0">
-                        <a class="card text-decoration-none" href="https://www.instagram.com/ddurusevim/">
-                            <img class="card-img-top img-fluid" src="./assets/duru.jpg" alt="Card image cap" />
+                        <a
+                            class="card text-decoration-none"
+                            href="https://www.instagram.com/ddurusevim/"
+                        >
+                            <img
+                                class="card-img-top img-fluid"
+                                src="./assets/duru.jpg"
+                                alt="Card image cap"
+                            />
 
                             <div class="card-footer text-white text-center">@duru</div>
                         </a>
                     </div>
                     <div class="col-6 col-md-2 p-0">
-                        <a class="card text-decoration-none" href="https://www.instagram.com/emruur/">
-                            <img class="card-img-top img-fluid" src="./assets/emre.jpg" alt="Card image cap" />
+                        <a
+                            class="card text-decoration-none"
+                            href="https://www.instagram.com/emruur/"
+                        >
+                            <img
+                                class="card-img-top img-fluid"
+                                src="./assets/emre.jpg"
+                                alt="Card image cap"
+                            />
 
                             <div class="card-footer text-white text-center">@emre</div>
                         </a>
                     </div>
                     <div class="col-6 col-md-2 p-0">
-                        <a class="card text-decoration-none" href="https://www.instagram.com/batuhantprkc/">
-                            <img class="card-img-top img-fluid" src="./assets/batu.jpg" alt="Card image cap" />
+                        <a
+                            class="card text-decoration-none"
+                            href="https://www.instagram.com/batuhantprkc/"
+                        >
+                            <img
+                                class="card-img-top img-fluid"
+                                src="./assets/batu.jpg"
+                                alt="Card image cap"
+                            />
 
                             <div class="card-footer text-white text-center">@batuhan</div>
                         </a>
@@ -153,55 +224,82 @@
                 </div>
             </div>
         </section>
-        <section id="songs" class="bg-black pt-5">
+        <section id="songs" class="bg-black py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-5">
-                        <ul class="list rounded-3 mt-0">
-                            <li class="item">
-                                <img src="./assets/yoruldum.jpg" class="img-fluid" alt="" />
-
-                                <h3 class="pt-3 ms-2">Yoruldum <span class="h5 text-muted">- Single</span></h3>
-                                <h4 class="text-muted ms-2">Tesadüfen</h4>
-                                <a class=" ms-2" href="https://distrokid.com/hyperfollow/tesadfen/yoruldum-2">Dinle/İndir</a>
-                            </li>
-                            <li class="item">
-                                <img src="./assets/yokus.jpg" class="img-fluid" alt="" />
-
-                                <h3 class="pt-3 ms-2">Yokuş <span class="h5 text-muted">- Single</span></h3>
-                                <h4 class="text-muted ms-2">Tesadüfen</h4>
-                                <a class=" ms-2" href="https://distrokid.com/hyperfollow/tesadfen/yoku">Dinle/İndir</a>
-                            </li>
-                            <li class="item">
-                                <img src="./assets/boyleguzel.jpg" class="img-fluid" alt="" />
-                                <h3 class="pt-3 ms-2">Böyle Güzel <span class="h5 text-muted">- Single</span></h3>
-                                <h4 class="text-muted ms-2">Tesadüfen & Eray</h4>
-                                <a class="ms-2" href="https://distrokid.com/hyperfollow/tesadfenanderay/byle-gzel-13">Dinle/İndir</a>
-                            </li>
-                            <li class="item">
-                                <img src="./assets/ilkakustikler.jpg" class="img-fluid" alt="" />
-                                <h3 class="pt-3 ms-2">İlk Akustikler <span class="text-muted h5">- 2 Şarkı</span></h3>
-                                <h4 class="text-muted ms-2">Tesadüfen</h4>
-                                <a class=" ms-2" href="https://distrokid.com/hyperfollow/tesadfen/ilk-akustikler ">Dinle/İndir</a>
-                            </li>
-                        </ul>
-                        <div class="buttonGroupYeah justify-content-center mb-4 d-none d-lg-flex">
-                            <button class="prev me-5">←</button>
-                            <button class="next ms-5">→</button>
+                        <div
+                            id="carouselExampleIndicators"
+                            class="carousel slide"
+                            data-bs-ride="carousel"
+                        >
+                            <div class="carousel-indicators">
+                                <button
+                                    type="button"
+                                    data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="0"
+                                    class="active"
+                                    aria-current="true"
+                                    aria-label="Slide 1"
+                                ></button>
+                                <button
+                                    type="button"
+                                    data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="1"
+                                    aria-label="Slide 2"
+                                ></button>
+                                <button
+                                    type="button"
+                                    data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="2"
+                                    aria-label="Slide 3"
+                                ></button>
+                            </div>
+                            <div class="carousel-inner rounded-3">
+                                <div class="carousel-item active">
+                                    <img src="./assets/yokus.jpg" class="d-block w-100" alt="..." />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="./assets/yoruldum.jpg"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="./assets/ilkakustikler.jpg"
+                                        class="d-block w-100"
+                                        alt="..."
+                                    />
+                                </div>
+                            </div>
+                            <button
+                                class="carousel-control-prev"
+                                type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev"
+                            >
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                                class="carousel-control-next"
+                                type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next"
+                            >
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-                        <ul class="indicatorsList" aria-hidden>
-                            <li class="indicator"></li>
-                            <li class="indicator"></li>
-                            <li class="indicator"></li>
-                            <li class="indicator"></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="etkinlikler" class="mt-5 mb-5 pb-5 pt-5">
+        <section id="etkinlikler" class="my-3 my-md-5 py-3 py-md-5">
             <div class="container-xl">
-                <h2 class="text-center mb-5 text-decoration-underline">Konserler</h2>
+                <h2 class="text-center mb-5 text-decoration-underline display-2">Konserler</h2>
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4 text-center pb-5">
                         <p class="lead text-muted mb-0">22 Aralık 2020</p>
@@ -235,7 +333,7 @@
                         <h4>IF Performance Hall</h4>
                         <a href="" class="text-muted">Biletler</a>
                     </div>
-                    <div class="col-md-6 col-lg-4 text-center pb-5">
+                    <div class="col-md-6 col-lg-4 text-center">
                         <p class="lead text-muted mb-0">27 Şubat 2021</p>
                         <h3>Ankara,Tunalı</h3>
                         <h4>645 Sahne</h4>
@@ -244,27 +342,29 @@
                 </div>
             </div>
         </section>
-        <section id="hakkımızda" class="mt-5 pt-5 mb-5 pb-5 bg-black">
+        <section id="hakkımızda" class="py-5 my-0 my-md-5 bg-black">
             <div class="container-lg">
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-0 g-md-5">
                     <div class="col-md-6 text-center text-md-start">
-                        <h2 class="mb-4">Biz Kimiz?</h2>
+                        <h2 class="mb-0 mb-md-4">Biz Kimiz?</h2>
                         <p>
-                            Grubun kuruluş tarihi Ocak 2017 olmasına rağmen Ocak 2019'da grubun son halini alan ve
-                            ''tesadüfen'' bir araya gelen grubun üyeleri; mikrofonda Duru Sevim’in, elektro gitarda
-                            Doruk Şahin’in, davulda Barış Baran’ın, bas gitarda Batuhan Toprakcı’nın ve klavyede Emre
-                            Uğur’un bulunduğu ankaralı müzik grubudur.
+                            Grubun kuruluş tarihi Ocak 2017 olmasına rağmen Ocak 2019'da grubun son
+                            halini alan ve ''tesadüfen'' bir araya gelen grubun üyeleri; mikrofonda
+                            Duru Sevim’in, elektro gitarda Doruk Şahin’in, davulda Barış Baran’ın,
+                            bas gitarda Batuhan Toprakcı’nın ve klavyede Emre Uğur’un bulunduğu
+                            ankaralı müzik grubudur.
                         </p>
                         <p>
-                            Bu güne kadar kronolojik olarak ''Yokuş'', ''Yoruldum'' ve ile yapmış oldukları rap
-                            tarzındaki ''Böyle Güzel'' adlı teklilierini müzik dünyasına sundular. Bunların ardından
-                            dinleyicilerinin beğenilerini kazanan Yokuş ve Yoruldum adlı şarkılarının akusitk
-                            versiyonlarının bulunduğu "İlk Akustikler" isminde bir EP çıkardılar.
+                            Bu güne kadar kronolojik olarak ''Yokuş'', ''Yoruldum'' ve ile yapmış
+                            oldukları rap tarzındaki ''Böyle Güzel'' adlı teklilierini müzik
+                            dünyasına sundular. Bunların ardından dinleyicilerinin beğenilerini
+                            kazanan Yokuş ve Yoruldum adlı şarkılarının akusitk versiyonlarının
+                            bulunduğu "İlk Akustikler" isminde bir EP çıkardılar.
                         </p>
                         <p>
-                            2020 yazında ise 4 yepyeni şarkının bulunduğu bir EP kaydına başlayan grup, EP'nin
-                            çıkmasıyla birlikte albüm lansmanlarıyla dinleyicileri ile konserlerde ve festivallerde
-                            buluşmayı planlıyor.
+                            2020 yazında ise 4 yepyeni şarkının bulunduğu bir EP kaydına başlayan
+                            grup, EP'nin çıkmasıyla birlikte albüm lansmanlarıyla dinleyicileri ile
+                            konserlerde ve festivallerde buluşmayı planlıyor.
                         </p>
                     </div>
                     <div class="col-md-6 d-flex justify-content-center">
@@ -277,7 +377,7 @@
                 </div>
             </div>
         </section>
-        <section id="contact" class="mt-5 pt-5">
+        <section id="contact" class="mt-0 mt-md-5 pt-5">
             <div class="container-lg">
                 <div class="text-center">
                     <h2>Bize Ulaşın!</h2>
@@ -291,7 +391,12 @@
                                 <span class="input-group-text">
                                     <i class="bi bi-envelope-fill"></i>
                                 </span>
-                                <input name="mail" type="email" class="form-control" placeholder="e.u@gmail.com" />
+                                <input
+                                    name="mail"
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="e.u@gmail.com"
+                                />
                                 <span class="input-group-text">
                                     <span
                                         class="tt"
@@ -308,10 +413,19 @@
                                 <span class="input-group-text">
                                     <i class="bi bi-person-circle"></i>
                                 </span>
-                                <input type="name" name="name" class="form-control" placeholder="Emre Ugur" />
+                                <input
+                                    type="name"
+                                    name="name"
+                                    class="form-control"
+                                    placeholder="Emre Ugur"
+                                />
 
                                 <span class="input-group-text">
-                                    <span class="tt" data-bs-placement="bottom" title="İsminizi girin?">
+                                    <span
+                                        class="tt"
+                                        data-bs-placement="bottom"
+                                        title="İsminizi girin?"
+                                    >
                                         <i class="bi bi-question-circle text-muted"></i>
                                     </span>
                                 </span>
@@ -330,7 +444,7 @@
                             </div>
 
                             <div class="mb-4 text-center">
-                                <button class="btn btn-primary">Submit</button>
+                                <button class="btn btn-primary">Gönder</button>
                             </div>
                         </form>
                     </div>
@@ -354,67 +468,13 @@
             }
 
             function boyleguzel() {
-                window.location.assign("https://distrokid.com/hyperfollow/tesadfenanderay/byle-gzel-13");
+                window.location.assign(
+                    "https://distrokid.com/hyperfollow/tesadfenanderay/byle-gzel-13"
+                );
             }
             function ilkakustikler() {
                 window.location.assign("https://distrokid.com/hyperfollow/tesadfen/ilk-akustikler");
             }
-        </script>
-        <script>
-            const tooltips = document.querySelectorAll(".tt");
-            tooltips.forEach((t) => new bootstrap.Tooltip(t));
-        </script>
-        <script>
-            const list = document.querySelector(".list");
-            const items = Array.from(document.querySelectorAll(".item"));
-            const indicators = Array.from(document.querySelectorAll(".indicator"));
-            const prev = document.querySelector(".prev");
-            const next = document.querySelector(".next");
-            const state = { active: 0 };
-
-            const observer = new IntersectionObserver(onIntersectionObserved, {
-                root: list,
-                threshold: 0.6,
-            });
-
-            function onIntersectionObserved(entries) {
-                entries.forEach((entry) => {
-                    // On page load, firefox claims item with index 1 isIntersecting,
-                    // while intersectionRatio is 0
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
-                        const intersectingIndex = items.indexOf(entry.target);
-                        activateIndicator(intersectingIndex);
-                    }
-                });
-            }
-
-            function activateIndicator(index) {
-                state.active = index;
-                indicators.forEach((indicator, i) => {
-                    indicator.classList.toggle("active", i === index);
-                });
-            }
-
-            items.forEach((item) => {
-                observer.observe(item);
-            });
-            indicators.forEach((x, i) =>
-                x.addEventListener("click", () => items[i].scrollIntoView({ inline: "start", behavior: "smooth" }))
-            );
-
-            prev.addEventListener("click", () => {
-                items[state.active - 1]?.scrollIntoView({
-                    inline: "start",
-                    behavior: "smooth",
-                });
-            });
-
-            next.addEventListener("click", () => {
-                items[state.active + 1]?.scrollIntoView({
-                    inline: "start",
-                    behavior: "smooth",
-                });
-            });
         </script>
     </body>
 </html>
