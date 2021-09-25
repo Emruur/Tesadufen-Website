@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tesadufen Official</title>
         <link rel="stylesheet" href="bootstrap.min.css" />
+        <script src="https://unpkg.com/scrollreveal"></script>
 
         <link
             rel="stylesheet"
@@ -27,12 +28,12 @@
             }
             .card:hover .card-footer {
                 background-color: rgb(180, 152, 152);
-                transition-duration: 250ms;
+                transition-duration: 350ms;
                 transition-timing-function: ease-in-out;
             }
 
             .card:hover {
-                transition-duration: 250ms;
+                transition-duration: 350ms;
                 transition-timing-function: ease-in-out;
                 transform: scale(1.05);
                 box-shadow: 0 10px 20px rgba(97, 91, 184, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
@@ -51,7 +52,7 @@
                     top: 0;
                     font-size: 5rem;
                 }
-                .konserler{
+                .konserler1{
                     padding-top: 3.5rem;
                 }
             }
@@ -191,7 +192,7 @@
         </nav>
         <section id="intro" class="my-2 my-md-4 py-2 py-md-5">
             <div class="container-fluid">
-                <div class="row justify-content-center align-items-center">
+                <div class="row justify-content-center align-items-center cards">
                     <div class="col-6 col-md-2 p-0">
                         <a
                             class="card text-decoration-none"
@@ -268,7 +269,7 @@
         <section id="songs" class="bg-black py-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-5">
+                    <div class="col-md-8 col-lg-5 caro">
                         <div
                             id="carouselExampleIndicators"
                             class="carousel slide"
@@ -377,7 +378,7 @@
         <section id="etkinlikler" class="my-3 my-md-5 py-3 py-md-5">
             <div class="container-xl position-relative">
                 <h2 class="position-absolute watermark">Konserler</h2>
-                <div class="row justify-content-center konserler">
+                <div class="row justify-content-center konserler konserler1">
                     <div class="col-md-6 col-lg-4 text-center pb-5">
                         <p class="lead text-muted mb-0">22 Aralık 2020</p>
                         <h3>Ankara,Çayyolu</h3>
@@ -397,7 +398,7 @@
                         <a href="" class="text-muted">Biletler</a>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center konserler">
                     <div class="col-md-6 col-lg-4 text-center pb-5">
                         <p class="lead text-muted mb-0">22 Aralık 2020</p>
                         <h3>Ankara,Çayyolu</h3>
@@ -422,8 +423,8 @@
         <section id="hakkımızda" class="py-5 my-0 my-md-5 bg-black">
             <div class="container-lg">
                 <div class="row align-items-center g-0 g-md-5">
-                    <div class="col-md-6 text-center text-md-start">
-                        <h2 class="mb-0 mb-md-4">Biz Kimiz?</h2>
+                    <div class="col-md-6 text-center text-md-start bizkim-header">
+                        <h2 class="mb-4 ">Biz Kimiz?</h2>
                         <p>
                             Grubun kuruluş tarihi Ocak 2017 olmasına rağmen Ocak 2019'da grubun son
                             halini alan ve ''tesadüfen'' bir araya gelen grubun üyeleri; mikrofonda
@@ -448,7 +449,7 @@
                         <img
                             src="./assets/cover.jpeg"
                             alt="tesadufen foto"
-                            class="img-fluid rounded d-none d-md-block object-fit-cover"
+                            class="img-fluid rounded d-none d-md-block object-fit-cover bizkim-photo"
                         />
                     </div>
                 </div>
@@ -552,6 +553,56 @@
             function ilkakustikler() {
                 window.location.assign("https://distrokid.com/hyperfollow/tesadfen/ilk-akustikler");
             }
+        </script>
+        
+
+        <script>
+            
+            ScrollReveal().reveal('.navbar-brand',{
+                duration:1750,
+                origin:"right",
+                distance:"30px",
+            })
+            ScrollReveal().reveal('.navbar',{
+                duration:1500,
+                origin:"bottom",
+                distance:"30px",
+            });
+            ScrollReveal().reveal('.cards',{
+                duration:2000,
+                origin:"bottom",
+                distance:"50px",
+            });
+            ScrollReveal().reveal('.caro',{
+                duration:1500,
+                origin:"top",
+                distance:"25px",
+                
+            })
+            ScrollReveal().reveal(".watermark",{
+                duration:1000,
+                origin:"bottom",
+                distance:"30px",
+                delay:600,
+            })
+            ScrollReveal().reveal(".konserler",{
+                duration:1000,
+                origin:"top",
+                distance:"30px",
+                delay:600,
+            })
+            ScrollReveal().reveal(".bizkim-header",
+            {
+                duration:1000,
+                origin:"left",
+                distance:"25px",
+            });
+            ScrollReveal().reveal(".bizkim-photo",
+            {
+                duration:1000,
+                origin:"right",
+                distance:"25px",
+            })
         </script>
     </body>
 </html>
