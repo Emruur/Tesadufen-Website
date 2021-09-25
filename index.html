@@ -34,9 +34,26 @@
             .card:hover {
                 transition-duration: 250ms;
                 transition-timing-function: ease-in-out;
-                transform: scale(1.1);
+                transform: scale(1.05);
                 box-shadow: 0 10px 20px rgba(97, 91, 184, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
                 z-index: 1;
+            }
+            .watermark {
+                font-style: italic;
+                font-size: 9rem;
+                bottom: -25px;
+                left: 0;
+                opacity: 20%;
+            }
+            @media screen and (max-width: 992px) {
+
+                .watermark {
+                    top: 0;
+                    font-size: 5rem;
+                }
+                .konserler{
+                    padding-top: 3.5rem;
+                }
             }
 
             .navbar-brand {
@@ -53,10 +70,13 @@
 
             .nav-logo {
                 width: 25px;
+                filter: grayscale(100%);
+                transition-duration: 250ms;
             }
 
             .nav-logo:hover {
-                transform: scale(1.05);
+                transform: scale(1.1);
+                filter: grayscale(0%);
             }
             .photologo {
                 width: 35px;
@@ -65,11 +85,33 @@
             .lft:hover {
                 transform: scale(1.05);
             }
-
-            
         </style>
     </head>
     <body>
+        <div
+            class="social-links d-none d-md-block position-fixed text-light"
+            style="right: 0; top: 30%; z-index: 2"
+        >
+            <ul style="list-style: none">
+                <li>
+                    <a class="" href="https://www.instagram.com/tesadufenofficial/?hl=tr"
+                        ><img src="/assets/instagram.png" class="nav-logo me-3 mt-2" alt=""
+                    /></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/watch?v=ltCopbqfNYI"
+                        ><img src="./assets/youtube.png" alt="" class="nav-logo me-3 mt-2" />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class=""
+                        href="https://open.spotify.com/artist/5kVYZroxmgkJvaGoFzpGMx?si=cBEVfIkRQ_eLK_HJ0sVZuA&dl_branch=1"
+                        ><img src="./assets/spotify.png" alt="" class="nav-logo me-3 mt-2"
+                    /></a>
+                </li>
+            </ul>
+        </div>
         <nav class="navbar navbar-expand-md navbar-dark bg-black">
             <div class="container-fluid">
                 <a href="#intro" class="navbar-brand pe-0 me-0">
@@ -107,43 +149,42 @@
                         <li class="nav-item">
                             <a href="#contact" class="nav-link">Bize Ulaşın</a>
                         </li>
-                        <li class="nav-item ms-2">
+                        <li class="nav-item">
                             <a href="#songs" class="nav-link">Şarkılar</a>
                         </li>
-                        <div class="dropdown">
-                            <button
-                                class="btn btn-secondary dropdown-toggle"
-                                type="button"
-                                id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Sosyal Medya
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="nav-item d-block d-md-none">
+                            <ul class="d-flex" style="list-style: none; padding: 0">
                                 <li>
                                     <a
-                                        class="dropdown-item"
+                                        class=""
                                         href="https://www.instagram.com/tesadufenofficial/?hl=tr"
-                                        >Instagram</a
-                                    >
+                                        ><img
+                                            src="/assets/instagram.png"
+                                            class="nav-logo m-2"
+                                            alt=""
+                                    /></a>
                                 </li>
                                 <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="https://www.youtube.com/watch?v=ltCopbqfNYI"
-                                        >YouTube
+                                    <a href="https://www.youtube.com/watch?v=ltCopbqfNYI"
+                                        ><img
+                                            src="./assets/youtube.png"
+                                            alt=""
+                                            class="nav-logo m-2"
+                                        />
                                     </a>
                                 </li>
                                 <li>
                                     <a
-                                        class="dropdown-item"
+                                        class=""
                                         href="https://open.spotify.com/artist/5kVYZroxmgkJvaGoFzpGMx?si=cBEVfIkRQ_eLK_HJ0sVZuA&dl_branch=1"
-                                        >Spotify</a
-                                    >
+                                        ><img
+                                            src="./assets/spotify.png"
+                                            alt=""
+                                            class="nav-logo m-2"
+                                    /></a>
                                 </li>
                             </ul>
-                        </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -256,22 +297,58 @@
                                 ></button>
                             </div>
                             <div class="carousel-inner rounded-3">
-                                <div class="carousel-item active">
+                                <div class="carousel-item active position-relative">
                                     <img src="./assets/yokus.jpg" class="d-block w-100" alt="..." />
+                                    <div
+                                        class="
+                                            song-info
+                                            position-absolute
+                                            w-100
+                                            d-flex
+                                            justify-content-center
+                                        "
+                                        style="top: 85%"
+                                    >
+                                        <a class="text-muted" href="#">Dinle/Indir</a>
+                                    </div>
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item position-relative">
+                                    <div
+                                        class="
+                                            song-info
+                                            position-absolute
+                                            w-100
+                                            d-flex
+                                            justify-content-center
+                                        "
+                                        style="top: 85%"
+                                    >
+                                        <a class="text-white" href="#">Dinle/Indir</a>
+                                    </div>
                                     <img
                                         src="./assets/yoruldum.jpg"
                                         class="d-block w-100"
                                         alt="..."
                                     />
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item position-relative">
                                     <img
                                         src="./assets/ilkakustikler.jpg"
                                         class="d-block w-100"
                                         alt="..."
                                     />
+                                    <div
+                                        class="
+                                            song-info
+                                            position-absolute
+                                            w-100
+                                            d-flex
+                                            justify-content-center
+                                        "
+                                        style="top: 85%"
+                                    >
+                                        <a class="text-white" href="#">Dinle/Indir</a>
+                                    </div>
                                 </div>
                             </div>
                             <button
@@ -298,9 +375,9 @@
             </div>
         </section>
         <section id="etkinlikler" class="my-3 my-md-5 py-3 py-md-5">
-            <div class="container-xl">
-                <h2 class="text-center mb-5 text-decoration-underline display-2">Konserler</h2>
-                <div class="row justify-content-center">
+            <div class="container-xl position-relative">
+                <h2 class="position-absolute watermark">Konserler</h2>
+                <div class="row justify-content-center konserler">
                     <div class="col-md-6 col-lg-4 text-center pb-5">
                         <p class="lead text-muted mb-0">22 Aralık 2020</p>
                         <h3>Ankara,Çayyolu</h3>
