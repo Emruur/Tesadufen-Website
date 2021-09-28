@@ -12,16 +12,19 @@
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet"> 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap"
+            rel="stylesheet"
+        />
 
         <style>
             html,
             body {
                 max-width: 100%;
                 overflow-x: hidden;
-                font-family: 'Libre Baskerville', serif;
+                font-family: "Libre Baskerville", serif;
             }
             .card {
                 transition-property: all;
@@ -47,12 +50,11 @@
                 opacity: 20%;
             }
             @media screen and (max-width: 992px) {
-
                 .watermark {
                     top: 0;
                     font-size: 5rem;
                 }
-                .konserler1{
+                .konserler1 {
                     padding-top: 3.5rem;
                 }
             }
@@ -115,7 +117,7 @@
         </div>
         <nav class="navbar navbar-expand-md navbar-dark bg-black">
             <div class="container-fluid">
-                <a href="#intro" class="navbar-brand pe-0 me-0">
+                <a href="./empthy.html" class="navbar-brand pe-0 me-0">
                     <span class="fw-bold ps-4">
                         <img src="./assets/logo.jpg" class="w-50" alt="" />
                     </span>
@@ -199,6 +201,8 @@
                             href="https://www.instagram.com/bariss_barann/"
                         >
                             <img
+                                width="1363"
+                                height="2048"
                                 class="card-img-top img-fluid"
                                 src="./assets/barıs.jpg"
                                 alt="Card image cap"
@@ -213,6 +217,8 @@
                             href="https://www.instagram.com/sahin.dorukk/"
                         >
                             <img
+                                width="1363"
+                                height="2048"
                                 class="card-img-top img-fluid"
                                 src="./assets/doruk.jpg"
                                 alt="Card image cap"
@@ -227,6 +233,8 @@
                             href="https://www.instagram.com/ddurusevim/"
                         >
                             <img
+                                width="1363"
+                                height="2048"
                                 class="card-img-top img-fluid"
                                 src="./assets/duru.jpg"
                                 alt="Card image cap"
@@ -241,6 +249,8 @@
                             href="https://www.instagram.com/emruur/"
                         >
                             <img
+                                width="1363"
+                                height="2048"
                                 class="card-img-top img-fluid"
                                 src="./assets/emre.jpg"
                                 alt="Card image cap"
@@ -255,6 +265,8 @@
                             href="https://www.instagram.com/batuhantprkc/"
                         >
                             <img
+                                width="1363"
+                                height="2048"
                                 class="card-img-top img-fluid"
                                 src="./assets/batu.jpg"
                                 alt="Card image cap"
@@ -299,7 +311,7 @@
                             </div>
                             <div class="carousel-inner rounded-3">
                                 <div class="carousel-item active position-relative">
-                                    <img src="./assets/yokus.jpg" class="d-block w-100" alt="..." />
+                                    <img width= "100%" src="./assets/yokus.jpg" class="d-block w-100" alt="..." />
                                     <div
                                         class="
                                             song-info
@@ -327,6 +339,7 @@
                                         <a class="text-white" href="#">Dinle/Indir</a>
                                     </div>
                                     <img
+                                    width= "100%"
                                         src="./assets/yoruldum.jpg"
                                         class="d-block w-100"
                                         alt="..."
@@ -334,6 +347,7 @@
                                 </div>
                                 <div class="carousel-item position-relative">
                                     <img
+                                    width= "100%"
                                         src="./assets/ilkakustikler.jpg"
                                         class="d-block w-100"
                                         alt="..."
@@ -424,7 +438,7 @@
             <div class="container-lg">
                 <div class="row align-items-center g-0 g-md-5">
                     <div class="col-md-6 text-center text-md-start bizkim-header">
-                        <h2 class="mb-4 ">Biz Kimiz?</h2>
+                        <h2 class="mb-4">Biz Kimiz?</h2>
                         <p>
                             Grubun kuruluş tarihi Ocak 2017 olmasına rağmen Ocak 2019'da grubun son
                             halini alan ve ''tesadüfen'' bir araya gelen grubun üyeleri; mikrofonda
@@ -449,7 +463,13 @@
                         <img
                             src="./assets/cover.jpeg"
                             alt="tesadufen foto"
-                            class="img-fluid rounded d-none d-md-block object-fit-cover bizkim-photo"
+                            class="
+                                img-fluid
+                                rounded
+                                d-none d-md-block
+                                object-fit-cover
+                                bizkim-photo
+                            "
                         />
                     </div>
                 </div>
@@ -554,55 +574,50 @@
                 window.location.assign("https://distrokid.com/hyperfollow/tesadfen/ilk-akustikler");
             }
         </script>
-        
 
         <script>
-            
-            ScrollReveal().reveal('.navbar-brand',{
-                duration:1750,
-                origin:"right",
-                distance:"30px",
-            })
-            ScrollReveal().reveal('.navbar',{
-                duration:1500,
-                origin:"bottom",
-                distance:"30px",
+            ScrollReveal().reveal(".navbar-brand", {
+                duration: 1750,
+                origin: "right",
+                distance: "30px",
             });
-            ScrollReveal().reveal('.cards',{
-                duration:2000,
-                origin:"bottom",
-                distance:"50px",
+            ScrollReveal().reveal(".navbar", {
+                duration: 1500,
+                origin: "bottom",
+                distance: "30px",
             });
-            ScrollReveal().reveal('.caro',{
-                duration:1500,
-                origin:"top",
-                distance:"25px",
-                
-            })
-            ScrollReveal().reveal(".watermark",{
-                duration:1000,
-                origin:"bottom",
-                distance:"30px",
-                delay:600,
-            })
-            ScrollReveal().reveal(".konserler",{
-                duration:1000,
-                origin:"top",
-                distance:"30px",
-                delay:600,
-            })
-            ScrollReveal().reveal(".bizkim-header",
-            {
-                duration:1000,
-                origin:"left",
-                distance:"25px",
+            ScrollReveal().reveal(".cards", {
+                duration: 2000,
+                origin: "bottom",
+                distance: "50px",
             });
-            ScrollReveal().reveal(".bizkim-photo",
-            {
-                duration:1000,
-                origin:"right",
-                distance:"25px",
-            })
+            ScrollReveal().reveal(".caro", {
+                duration: 1500,
+                origin: "top",
+                distance: "25px",
+            });
+            ScrollReveal().reveal(".watermark", {
+                duration: 1000,
+                origin: "bottom",
+                distance: "30px",
+                delay: 600,
+            });
+            ScrollReveal().reveal(".konserler", {
+                duration: 1000,
+                origin: "top",
+                distance: "30px",
+                delay: 600,
+            });
+            ScrollReveal().reveal(".bizkim-header", {
+                duration: 1000,
+                origin: "left",
+                distance: "25px",
+            });
+            ScrollReveal().reveal(".bizkim-photo", {
+                duration: 1000,
+                origin: "right",
+                distance: "25px",
+            });
         </script>
     </body>
 </html>
